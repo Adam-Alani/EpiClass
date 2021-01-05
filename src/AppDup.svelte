@@ -161,3 +161,123 @@
             @import 'tailwindcss/utilities';
 
         </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pr-4 pb-4 grid grid-cols-7 gray-text overflow-y-auto">
+            <div></div>
+            <div class="text-center font-semibold">Mon</div>
+            <div class="text-center font-semibold">Tue</div>
+            <div class="text-center font-semibold">Wed</div>
+            <div class="text-center font-semibold">Thur</div>
+            <div class="text-center font-semibold">Fri</div>
+            <div class="weekend text-center font-semibold">Sat</div>
+
+            <div class="my-3 text-center items-center">8:00 - 9:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">9:00 - 10:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">10:00 - 11:00</div>
+            <div class="border-gray-300 border-2 "></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">11:00 - 12:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center" >12:00 - 13:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">13:00 - 14:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">14:00 - 15:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">15:00 - 16:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">16:00 - 17:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">17:00 - 18:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">18:00 - 19:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+            <div class="my-3 text-center items-center">19:00 - 20:00</div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+            <div class="border-gray-300 border-2"></div>
+
+
+        </div>

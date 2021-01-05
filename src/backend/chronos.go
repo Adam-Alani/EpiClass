@@ -1,52 +1,38 @@
 package main
 
 import (
-	"encoding/json"
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"os"
-	"log"
+	//"strings"
 
 )
 
 const (
-	endpoint = "http://pokeapi.co/api/v2/pokedex/kanto/"
+	endpoint = "https://v2ssl.webservices.chronos.epita.net/api/v2"
 )
 
+
 func main() {
-	response, err := http.Get(endpoint)
+	url := "http://restapi3.apiary.io/notes"
+	fmt.Println("URL:>", url)
+
+	var jsonStr = []byte(`{"title":"Buy cheese and bread for breakfast."}`)
+	req, err := http.NewRequest("POST", endpoint, bytes.NewBuffer(jsonStr))
+	req.Header.Set("name", "test")
+	req.Header.Set("password", "test")
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
+		panic(err)
 	}
+	defer resp.Body.Close()
 
-	responseData, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(responseData))
-
-	var responseObject Response
-	json.Unmarshal(responseData, &responseObject)
-
-	fmt.Println(responseObject.Pokemon)
-	for i := 0; i < len(responseObject.Pokemon) ; i++ {
-		fmt.Println(responseObject.Pokemon[i].Species.Name)
-	}
-
-}
-
-type Response struct {
-	Name string `json:"name"`
-	Pokemon []Pokemon `json:"pokemon_entries"`
-}
-
-type Pokemon struct {
-	EntryNo int `json:"entry_number"`
-	Species PokemonSpecies `json:"pokemon_species"`
-}
-
-type PokemonSpecies struct {
-	Name string `json:"name"`
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, _ := ioutil.ReadAll(resp.Body)
+	fmt.Println("response Body:", string(body))
 }
