@@ -7,11 +7,8 @@
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppDup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppDup.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/chronos.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/chronos.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterSearch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterSearch.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +23,7 @@
         <option value="ListItems" />
         <option value="Calendar" />
         <option value="DaySched" />
+        <option value="FetchData" />
       </list>
     </option>
   </component>
@@ -68,6 +66,14 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="EpiCal" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/backend/server.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build test.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EpiCal" />
       <working_directory value="$PROJECT_DIR$" />
@@ -90,7 +96,7 @@
       <workItem from="1609799862468" duration="3777000" />
       <workItem from="1609806370192" duration="10995000" />
       <workItem from="1609836670576" duration="704000" />
-      <workItem from="1609842094823" duration="12038000" />
+      <workItem from="1609842094823" duration="17228000" />
     </task>
     <servers />
   </component>
