@@ -45,58 +45,7 @@ func fetchAPI(query string) Calendar {
 
 
 
-func getData(cal Calendar) Weekly {
-	var formatted Weekly
 
-	for _, d := range cal.DayList {
-		day := Daily{
-			Date: d.DateTime,
-		}
-
-		var currentCourse string
-		var currentCourseIndex int
-		for i := 0; i < len(d.CourseList); i++ {
-			c := d.CourseList[i]
-
-			if currentCourse == c.Name {
-				current := &day.Courses[currentCourseIndex]
-
-				current.Duration += c.Duration
-				current.EndDate = current.StartDate.Add(time.Duration(current.Duration) * time.Minute)
-
-				continue
-			}
-
-
-			course := Courses{
-				Name:      c.Name,
-				StartDate: c.BeginDate,
-			}
-
-			for _, t := range c.StaffList {
-				course.Staff = append(course.Staff, t.Name)
-			}
-
-			if len(course.Staff) > 10 { //Removes the 5AM lesson with all the teachers
-				continue
-			}
-
-
-			course.Duration = c.Duration
-			course.EndDate = course.StartDate.Add(time.Duration(course.Duration) * time.Minute)
-
-
-			day.Courses = append(day.Courses, course)
-
-			currentCourse = c.Name
-			currentCourseIndex = len(day.Courses) - 1
-		}
-
-		formatted.Daily = append(formatted.Daily, day)
-	}
-	prettyPrint(formatted)
-	return formatted
-}
 
 
 func prettyPrint(data Weekly) {
@@ -146,20 +95,3 @@ type Calendar struct {
 }
 
 
-type Weekly struct {
-	Daily []Daily `json:"daily"`
-}
-
-type Daily struct {
-	Date time.Time `json:"date"`
-	Courses []Courses `json:"courses"`
-}
-
-type Courses struct {
-	Name      string    `json:"name"`
-	StartDate time.Time `json:"start_date"`
-	EndDate   time.Time `json:"end_date"`
-	Duration  int       `json:"duration"`
-	Staff     []string  `json:"staff"`
-
-}

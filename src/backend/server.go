@@ -8,7 +8,7 @@ import (
 
 func runServer(w http.ResponseWriter, request *http.Request) {
 
-	days := fetchAPI("Planning/GetRangeWeekRecursive/INFOS1A1-1/0")
+	days := fetchAPI("Planning/GetRangeWeekRecursive/INFOS1A1-1/10")
 	formatted := getData(days)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
