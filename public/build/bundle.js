@@ -1169,7 +1169,7 @@ var app = (function () {
     			t1 = text("-");
     			t2 = text(t2_value);
     			attr_dev(a, "href", "#");
-    			attr_dev(a, "class", "truncate leading-loose outline-none hover:text-gray-200 svelte-q641fl");
+    			attr_dev(a, "class", "truncate leading-loose outline-none hover:text-gray-200 svelte-1kqw151");
     			add_location(a, file$1, 45, 12, 1883);
     		},
     		m: function mount(target, anchor) {
@@ -1259,9 +1259,9 @@ var app = (function () {
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "stroke-width", "2");
     			attr_dev(path, "d", "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z");
-    			attr_dev(path, "class", "svelte-q641fl");
+    			attr_dev(path, "class", "svelte-1kqw151");
     			add_location(path, file$1, 40, 144, 1419);
-    			attr_dev(svg, "class", "gray-text  svelte-q641fl");
+    			attr_dev(svg, "class", "gray-text  svelte-1kqw151");
     			attr_dev(svg, "width", "18");
     			attr_dev(svg, "height", "18");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
@@ -1270,11 +1270,11 @@ var app = (function () {
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			add_location(svg, file$1, 40, 8, 1283);
     			attr_dev(input, "placeholder", "Enter Your Class");
-    			attr_dev(input, "class", "ml-2 gray-text font-semibold border-b-2 border-gray-400 focus:outline-none w-40  svelte-q641fl");
+    			attr_dev(input, "class", "ml-2 gray-text font-semibold border-b-2 border-gray-400 focus:outline-none w-40  svelte-1kqw151");
     			add_location(input, file$1, 41, 8, 1554);
-    			attr_dev(div0, "class", "h-16 flex flex-none items-center px-4 bg-white  svelte-q641fl");
+    			attr_dev(div0, "class", "h-16 flex flex-none items-center px-4 bg-white  svelte-1kqw151");
     			add_location(div0, file$1, 39, 4, 1212);
-    			attr_dev(div1, "class", "text-center font-semibold overflow-y-auto svelte-q641fl");
+    			attr_dev(div1, "class", "text-center font-semibold overflow-y-auto svelte-1kqw151");
     			add_location(div1, file$1, 43, 4, 1725);
     		},
     		l: function claim(nodes) {
@@ -1546,7 +1546,7 @@ var app = (function () {
     }
 
     function emptyClass(currentTime, prevTime) {
-    	return parseInt(currentTime.split("T")[1].split(":")[0]) !== 1 + parseInt(prevTime.split("T")[1].split(":")[0]);
+    	return parseInt(currentTime.split("T")[1].split(":")[0]) > 1 + parseInt(prevTime.split("T")[1].split(":")[0]);
     }
 
     function fixTime(date) {
@@ -1588,23 +1588,21 @@ var app = (function () {
     			let courseList = Object.values(listData[0][i].courses);
 
     			for (let j = 0; j < courseList.length; j++) {
-    				let course = Object.values(courseList);
-
-    				for (let k = 0; k < course.length; k++) {
-    					tempCourses.push(Object.values(course[k]));
-    					tempCourses = tempCourses;
-    					console.log(Object.values(course[k]));
-    				}
+    				let course = Object.values(courseList[j]);
+    				tempCourses.push(course);
+    				tempCourses = tempCourses;
     			}
     		}
 
-    		console.table(tempCourses);
+    		console.log(tempCourses);
     		allCourses.push(tempCourses[0]);
     		allCourses = allCourses;
 
     		for (let i = 1; i < tempCourses.length; i++) {
     			if (emptyClass(tempCourses[i][1], tempCourses[i - 1][1])) {
-    				allCourses.push([""]);
+    				let date = new Date(tempCourses[i - 1][1]);
+    				date.setHours(date.getHours() + 1);
+    				allCourses.push([" ", date]);
     				allCourses = allCourses;
     			}
 
@@ -1765,11 +1763,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 103, 32, 5561);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 102, 28, 5484);
-    			attr_dev(div1, "class", "flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 101, 24, 5362);
     		},
     		m: function mount(target, anchor) {
@@ -1822,11 +1820,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 97, 32, 5172);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 96, 28, 5095);
-    			attr_dev(div1, "class", "flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 95, 24, 4970);
     		},
     		m: function mount(target, anchor) {
@@ -1879,11 +1877,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 91, 32, 4746);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 90, 28, 4669);
-    			attr_dev(div1, "class", "flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 89, 24, 4544);
     		},
     		m: function mount(target, anchor) {
@@ -1936,11 +1934,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 85, 32, 4319);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 84, 28, 4242);
-    			attr_dev(div1, "class", "flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 83, 24, 4119);
     		},
     		m: function mount(target, anchor) {
@@ -1993,11 +1991,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 79, 32, 3893);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 78, 28, 3816);
-    			attr_dev(div1, "class", "flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 77, 24, 3692);
     		},
     		m: function mount(target, anchor) {
@@ -2050,11 +2048,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 73, 32, 3467);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 72, 28, 3390);
-    			attr_dev(div1, "class", "flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 71, 24, 3267);
     		},
     		m: function mount(target, anchor) {
@@ -2107,11 +2105,11 @@ var app = (function () {
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(p, "class", "svelte-11ijyph");
+    			attr_dev(p, "class", "svelte-1kqw151");
     			add_location(p, file$2, 67, 32, 3042);
-    			attr_dev(div0, "class", "flex items-center text-center svelte-11ijyph");
+    			attr_dev(div0, "class", "flex items-center text-center svelte-1kqw151");
     			add_location(div0, file$2, 66, 28, 2965);
-    			attr_dev(div1, "class", "flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-11ijyph");
+    			attr_dev(div1, "class", "flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow svelte-1kqw151");
     			add_location(div1, file$2, 65, 24, 2840);
     		},
     		m: function mount(target, anchor) {
@@ -2330,41 +2328,41 @@ var app = (function () {
 
     			attr_dev(path0, "fill-rule", "evenodd");
     			attr_dev(path0, "d", "M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z");
-    			attr_dev(path0, "class", "svelte-11ijyph");
+    			attr_dev(path0, "class", "svelte-1kqw151");
     			add_location(path0, file$2, 54, 147, 1651);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "width", "24");
     			attr_dev(svg0, "height", "24");
     			attr_dev(svg0, "fill", "currentColor");
-    			attr_dev(svg0, "class", "bi bi-arrow-left-square svelte-11ijyph");
+    			attr_dev(svg0, "class", "bi bi-arrow-left-square svelte-1kqw151");
     			attr_dev(svg0, "viewBox", "0 0 16 16");
     			add_location(svg0, file$2, 54, 12, 1516);
     			attr_dev(a0, "role", "button");
-    			attr_dev(a0, "class", "rounded-full border-transparent hover:bg-green-300 dgray-text   svelte-11ijyph");
+    			attr_dev(a0, "class", "rounded-full border-transparent hover:bg-green-300 dgray-text   svelte-1kqw151");
     			add_location(a0, file$2, 53, 8, 1376);
-    			attr_dev(strong, "class", "svelte-11ijyph");
+    			attr_dev(strong, "class", "svelte-1kqw151");
     			add_location(strong, file$2, 56, 68, 1966);
-    			attr_dev(h1, "class", "flex-none px-4 py-4 custom-h text-xl dgray-text svelte-11ijyph");
+    			attr_dev(h1, "class", "flex-none px-4 py-4 custom-h text-xl dgray-text svelte-1kqw151");
     			add_location(h1, file$2, 56, 8, 1906);
     			attr_dev(path1, "fill-rule", "evenodd");
     			attr_dev(path1, "d", "M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z");
-    			attr_dev(path1, "class", "svelte-11ijyph");
+    			attr_dev(path1, "class", "svelte-1kqw151");
     			add_location(path1, file$2, 58, 148, 2299);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "width", "24");
     			attr_dev(svg1, "height", "24");
     			attr_dev(svg1, "fill", "currentColor");
-    			attr_dev(svg1, "class", "bi bi-arrow-right-circle svelte-11ijyph");
+    			attr_dev(svg1, "class", "bi bi-arrow-right-circle svelte-1kqw151");
     			attr_dev(svg1, "viewBox", "0 0 16 16");
     			add_location(svg1, file$2, 58, 12, 2163);
     			attr_dev(a1, "role", "button");
-    			attr_dev(a1, "class", "rounded-full border-transparent hover:bg-green-300 dgray-text   svelte-11ijyph");
+    			attr_dev(a1, "class", "rounded-full border-transparent hover:bg-green-300 dgray-text   svelte-1kqw151");
     			add_location(a1, file$2, 57, 8, 2022);
-    			attr_dev(div0, "class", "h-16 hidden mx-2 lg:flex justify-center  text-center items-center svelte-11ijyph");
+    			attr_dev(div0, "class", "h-16 hidden mx-2 lg:flex justify-center  text-center items-center svelte-1kqw151");
     			add_location(div0, file$2, 52, 4, 1287);
-    			attr_dev(div1, "class", "gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold  svelte-11ijyph");
+    			attr_dev(div1, "class", "gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold  svelte-1kqw151");
     			add_location(div1, file$2, 61, 4, 2563);
-    			attr_dev(div2, "class", "w-96 flex-col gray-text bg-gray-200 hidden lg:flex   svelte-11ijyph");
+    			attr_dev(div2, "class", "w-96 flex-col gray-text bg-gray-200 hidden lg:flex   svelte-1kqw151");
     			add_location(div2, file$2, 50, 0, 1213);
     		},
     		l: function claim(nodes) {

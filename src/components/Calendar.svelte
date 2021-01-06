@@ -13,21 +13,22 @@
         for (let i = 0 ; i < listData[0].length ; i++) {
             let courseList = Object.values(listData[0][i].courses)
             for (let j = 0 ; j < courseList.length ; j++) {
-                let course = Object.values(courseList);
-                for (let k = 0 ; k < course.length ; k++) {
-                    tempCourses.push(Object.values(course[k]))
-                    tempCourses = tempCourses;
-                    console.log(Object.values(course[k]))
-                }
+                let course = Object.values(courseList[j]);
+                tempCourses.push(course)
+                tempCourses = tempCourses;
+
             }
         }
-        console.table(tempCourses)
+        console.log(tempCourses)
 
         allCourses.push(tempCourses[0])
         allCourses = allCourses;
         for (let i = 1; i < tempCourses.length; i++) {
             if (emptyClass(tempCourses[i][1] , tempCourses[i-1][1])) {
-                allCourses.push(["" , ])
+
+                let date = new Date(tempCourses[i-1][1])
+                date.setHours(date.getHours()+1)
+                allCourses.push([" " , date])
                 allCourses = allCourses;
             }
             allCourses.push(tempCourses[i])
@@ -38,7 +39,7 @@
     })
 
     function emptyClass(currentTime , prevTime) {
-        return parseInt(currentTime.split('T')[1].split(':')[0]) !== 1 + parseInt(prevTime.split('T')[1].split(':')[0]);
+        return parseInt(currentTime.split('T')[1].split(':')[0]) > 1 + parseInt(prevTime.split('T')[1].split(':')[0]);
 
     }
 

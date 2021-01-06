@@ -6,10 +6,7 @@
       <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppDup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppDup.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calendar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Schedule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Schedule.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stores.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <recent name="C:\Programming\EpiCal\src\frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build chronos.go">
+  <component name="RunManager">
     <configuration name="go build chronos.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EpiCal" />
       <working_directory value="$PROJECT_DIR$" />
@@ -104,6 +101,7 @@
       <workItem from="1609842094823" duration="30199000" />
       <workItem from="1609889331775" duration="1186000" />
       <workItem from="1609892196341" duration="10815000" />
+      <workItem from="1609924968626" duration="2396000" />
     </task>
     <servers />
   </component>
