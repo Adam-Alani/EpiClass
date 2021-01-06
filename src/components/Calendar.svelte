@@ -1,9 +1,11 @@
 <script>
     import {onMount} from 'svelte';
-    import {currDay, currDayStr, weekDays} from "./stores";
+    import {currDay, WEEKLY_CUSTOM_THEME, currDayStr, weekDays} from "./stores";
+    import Calendar from 'tui-calendar'; /* ES6 */
+    import "tui-calendar/dist/tui-calendar.css";
+
     let data;
     let listData = [];
-    let tempCourses = [];
     let allCourses = [];
 
     onMount(async () => {
@@ -14,33 +16,98 @@
             let courseList = Object.values(listData[0][i].courses)
             for (let j = 0 ; j < courseList.length ; j++) {
                 let course = Object.values(courseList[j]);
-                tempCourses.push(course)
-                tempCourses = tempCourses;
-
-            }
-        }
-        console.log(tempCourses)
-
-        allCourses.push(tempCourses[0])
-        allCourses = allCourses;
-        for (let i = 1; i < tempCourses.length; i++) {
-            if (emptyClass(tempCourses[i][1] , tempCourses[i-1][1])) {
-
-                let date = new Date(tempCourses[i-1][1])
-                date.setHours(date.getHours()+1)
-                allCourses.push([" " , date])
+                allCourses.push(course)
                 allCourses = allCourses;
+
             }
-            allCourses.push(tempCourses[i])
-            allCourses = allCourses;
         }
         console.log(allCourses)
+
+
+        for (let i = 0; i < allCourses.length; i++) {
+
+            if (allCourses[i][0].includes("Math")) {
+                allCourses[i].push('#A78BFA')
+            }
+            else if (allCourses[i][0].includes("Algo")) {
+                allCourses[i].push('#1d69ff')
+            }
+            else if (allCourses[i][0].includes("Phys")) {
+                allCourses[i].push('#fa8beb')
+            }
+            else if (allCourses[i][0].includes("Elec")) {
+                allCourses[i].push('#c6fa8b')
+            }
+            else if (allCourses[i][0].includes("Archi")) {
+                allCourses[i].push('#8bfa8d')
+            }
+            else if (allCourses[i][0].includes("Prog")) {
+                allCourses[i].push('#09730c')
+            }
+            else if (allCourses[i][0].includes("FLE")) {
+                allCourses[i].push('#20e3ff')
+            }
+            else {
+                allCourses[i].push('#ff7e4d')
+            }
+
+        }
+        console.log(allCourses)
+
+        var calendar = new Calendar('#calendar', {
+            defaultView: 'week',
+            theme: $WEEKLY_CUSTOM_THEME,
+            week: {
+                workweek: true
+            },
+            timezone: {
+                zones: [
+                    {
+                        timezoneOffset: 0,
+                    },
+                    ],
+
+            },
+            isReadOnly: true,
+            taskView: false,
+            scheduleView: ['time'],
+            template: {
+                monthDayname: function(dayname) {
+                    return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+                }
+            }
+        })
+
+
+        for (let i = 0; i < allCourses.length ; i++) {
+            calendar.createSchedules([
+                {
+                    id: i.toString(),
+                    calendarId: '1',
+                    title: allCourses[i][0],
+                    category: 'time',
+                    dueDateClass: '',
+                    start: allCourses[i][1],
+                    end: allCourses[i][2],
+                    isReadOnly: true,
+                    bgColor: allCourses[i][5],
+                    color: '#ffffff'
+
+                },
+            ]);
+        }
+
+
+
+
+
+
+
 
     })
 
     function emptyClass(currentTime , prevTime) {
         return parseInt(currentTime.split('T')[1].split(':')[0]) > 1 + parseInt(prevTime.split('T')[1].split(':')[0]);
-
     }
 
     export function fixTime(date) {
@@ -89,6 +156,7 @@
 
 </script>
 
+<div id="calendar" class="cursor-pointer" style="height: 800px;"></div>
 
 
 <style>

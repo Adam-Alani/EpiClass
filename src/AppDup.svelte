@@ -676,3 +676,26 @@
 
 
     </div>
+
+
+
+
+
+
+
+
+
+
+    for (let i = 0; i < allCourses;i++) {
+    calendar.createSchedules([
+        {
+            id: i.toString(),
+            calendarId: '1',
+            title: allCourses[0],
+            category: 'time',
+            dueDateClass: '',
+            start: allCourses[1].toLocalTime(),
+            end: allCourses[2].toLocalTime()
+        },
+    ]);
+}

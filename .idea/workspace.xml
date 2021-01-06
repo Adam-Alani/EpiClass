@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppDup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppDup.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/chronos.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/chronos.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calendar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stores.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +27,10 @@
         <option value="Calendar" />
         <option value="DaySched" />
         <option value="FetchData" />
-        <option value="HTML File" />
         <option value="chooseColor" />
-        <option value="JavaScript File" />
         <option value="Go File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -101,7 +107,7 @@
       <workItem from="1609842094823" duration="30199000" />
       <workItem from="1609889331775" duration="1186000" />
       <workItem from="1609892196341" duration="10815000" />
-      <workItem from="1609924968626" duration="2396000" />
+      <workItem from="1609924968626" duration="13995000" />
     </task>
     <servers />
   </component>

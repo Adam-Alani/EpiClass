@@ -47,7 +47,6 @@ func fetchAPI(query string) Calendar {
 
 
 
-
 func prettyPrint(data Weekly) {
 	prettyJSON, err := json.MarshalIndent(data, "", "    ")
 	if err != nil {
