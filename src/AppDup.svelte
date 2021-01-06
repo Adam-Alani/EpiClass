@@ -359,5 +359,320 @@
                     <p>19:00</p>
                 </div>
             </div>
-
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class=""></div>
+        <div class="my-3 text-center items-center">8:00 - 9:00</div>
+        <div class="my-3 text-center items-center">9:00 - 10:00</div>
+        <div class="my-3 text-center items-center">10:00 - 11:00</div>
+        <div class="my-3 text-center items-center">11:00 - 12:00</div>
+        <div class="my-3 text-center items-center" >12:00 - 13:00</div>
+        <div class="my-3 text-center items-center">13:00 - 14:00</div>
+        <div class="my-3 text-center items-center">14:00 - 15:00</div>
+        <div class="my-3 text-center items-center">15:00 - 16:00</div>
+        <div class="my-3 text-center items-center">16:00 - 17:00</div>
+        <div class="my-3 text-center items-center">17:00 - 18:00</div>
+        <div class="my-3 text-center items-center">18:00 - 19:00</div>
+        <div class="my-3 text-center items-center">19:00 - 20:00</div>
+
+        <div class="text-center font-semibold">Mon</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold">Tue</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold">Wed</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold">Thur</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold">Fri</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="weekend text-center font-semibold">Sat</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class=""></div>
+        <div class="my-3 text-center items-center">8:00 - 9:00</div>
+        <div class="my-3 text-center items-center">9:00 - 10:00</div>
+        <div class="my-3 text-center items-center">10:00 - 11:00</div>
+        <div class="my-3 text-center items-center">11:00 - 12:00</div>
+        <div class="my-3 text-center items-center" >12:00 - 13:00</div>
+        <div class="my-3 text-center items-center">13:00 - 14:00</div>
+        <div class="my-3 text-center items-center">14:00 - 15:00</div>
+        <div class="my-3 text-center items-center">15:00 - 16:00</div>
+        <div class="my-3 text-center items-center">16:00 - 17:00</div>
+        <div class="my-3 text-center items-center">17:00 - 18:00</div>
+        <div class="my-3 text-center items-center">18:00 - 19:00</div>
+        <div class="my-3 text-center items-center">19:00 - 20:00</div>
+
+        <div class="text-center font-semibold items-center ">Mon</div>
+        {#each listData as listD}
+            {#each listD[0].courses as courses}
+                {#if (courses.name).includes("Math")}
+                    <div class="flex flex-1 bg-purple-400 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>Math</p>
+                        </div>
+                    </div>
+                {:else if (courses.name).includes("Phys")}
+                    <div class="flex flex-1 bg-pink-300 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if (courses.name).includes("Algo")}
+                    <div class="flex flex-1 bg-green-300 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>Algo</p>
+                        </div>
+                    </div>
+                {:else if (courses.name).includes("Archi")}
+                    <div class="flex flex-1 bg-blue-400 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if (courses.name).includes("Elec")}
+                    <div class="flex flex-1 bg-indigo-300 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if (courses.name).includes("CIE")}
+                    <div class="flex flex-1 bg-yellow-200 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else}
+                    <div class="flex flex-1 bg-red-300 items-center justify-center my-1 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {/if}
+            {/each}
+        {/each}
+
+        <div class="flex flex-1 bg-white items-center justify-center my-1 shadow">
+            <div class="flex items-center text-center">
+                <p></p>
+            </div>
+        </div>
+        <div class="flex flex-1 bg-white items-center justify-center my-1 shadow">
+            <div class="flex items-center text-center">
+                <p></p>
+            </div>
+        </div>
+        <div class="flex flex-1 bg-white items-center justify-center my-1 shadow">
+            <div class="flex items-center text-center">
+                <p></p>
+            </div>
+        </div>
+        <div class="flex flex-1 bg-white items-center justify-center my-1 shadow">
+            <div class="flex items-center text-center">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="text-center font-semibold items-center ">Tue</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold items-center ">Wed</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold items-center ">Thur</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="text-center font-semibold items-center ">Fri</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+        <div class="weekend text-center font-semibold items-center ">Sat</div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+
+
+    </div>

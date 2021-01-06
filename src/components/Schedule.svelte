@@ -9,15 +9,13 @@
 
     onMount(async () => {
         data = await fetch('http://localhost:8090/1').then(x => x.json())
-        console.log(data)
         listData = Object.values(data)
-        console.log(listData)
     })
 
-    function fixTime(date) {
+    export function fixTime(date) {
         return date.split('T')[1].slice(0,-4);
     }
-    function increaseDay(sign) {
+    export function increaseDay(sign) {
         console.log($currDay)
         if ($currDay !== 0 || sign === false) {
 
@@ -33,7 +31,7 @@
             }
         }
     }
-    function checkWeekend(day , sign) {
+    export function checkWeekend(day , sign) {
         if (sign) {
             if (day === 1) {
                 console.log("HEY")
@@ -50,7 +48,7 @@
 </script>
 
 
-<div class=" flex flex-1 flex-col gray-text bg-gray-200  ">
+<div class="w-96 flex-col gray-text bg-gray-200 hidden lg:flex  ">
 
     <div class="h-16 hidden mx-2 lg:flex justify-center  text-center items-center">
         <a role="button"  on:click={()=> {increaseDay(true)}} class="rounded-full border-transparent hover:bg-green-300 dgray-text  ">
@@ -61,54 +59,54 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>
         </a>
     </div>
-    <div class="gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold   ">
-    {#each listData as listD}
-            {#each listD[$currDay].courses as courses}
-                {#if (courses.name).includes("Math")}
-                    <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+    <div class="gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold ">
+        {#each listData as listD}
+                {#each listD[$currDay].courses as courses}
+                    {#if (courses.name).includes("Math")}
+                        <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else if (courses.name).includes("Phys")}
-                    <div class="flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else if (courses.name).includes("Phys")}
+                        <div class="flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else if (courses.name).includes("Algo")}
-                    <div class="flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else if (courses.name).includes("Algo")}
+                        <div class="flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else if (courses.name).includes("Archi")}
-                    <div class="flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else if (courses.name).includes("Archi")}
+                        <div class="flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else if (courses.name).includes("Elec")}
-                    <div class="flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else if (courses.name).includes("Elec")}
+                        <div class="flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else if (courses.name).includes("CIE")}
-                    <div class="flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else if (courses.name).includes("CIE")}
+                        <div class="flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {:else}
-                    <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                        <div class="flex items-center text-center">
-                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                    {:else}
+                        <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                            <div class="flex items-center text-center">
+                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                            </div>
                         </div>
-                    </div>
-                {/if}
-            {/each}
-    {/each}
+                    {/if}
+                {/each}
+        {/each}
     </div>
 </div>
 

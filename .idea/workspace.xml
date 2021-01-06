@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backend/getCourses.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppDup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppDup.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/chronos.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/chronos.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/API/FetchData.svelte" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calendar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterSearch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterSearch.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Schedule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Schedule.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stores.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +62,7 @@
       <recent name="C:\Programming\EpiCal\src\frontend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build chronos.go">
     <configuration name="go build chronos.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EpiCal" />
       <working_directory value="$PROJECT_DIR$" />
@@ -109,7 +102,8 @@
       <workItem from="1609806370192" duration="10995000" />
       <workItem from="1609836670576" duration="704000" />
       <workItem from="1609842094823" duration="30199000" />
-      <workItem from="1609889331775" duration="321000" />
+      <workItem from="1609889331775" duration="1186000" />
+      <workItem from="1609892196341" duration="10815000" />
     </task>
     <servers />
   </component>
