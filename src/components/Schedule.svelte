@@ -1,16 +1,20 @@
 <script>
     import { onMount } from 'svelte'
-    import {currDay, currDayStr, weekDays} from "./stores";
+    import {classData, currDay, currDayStr, selectedClass, weekDays} from "./stores";
+    import axios from "axios";
 
     let data;
     let listData = [];
 
 
 
-    onMount(async () => {
-        data = await fetch('http://localhost:8090/1').then(x => x.json())
-        listData = Object.values(data)
-    })
+
+    onMount(
+        async function update() {
+            data = await fetch('http://localhost:8090/').then(x => x.json())
+            listData = Object.values(data)
+        }
+    )
 
     export function fixTime(date) {
         return date.split('T')[1].slice(0,-4);
@@ -60,52 +64,52 @@
         </a>
     </div>
     <div class="gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold ">
-        {#each listData as listD}
-                {#each listD[$currDay].courses as courses}
-                    {#if (courses.name).includes("Math")}
-                        <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+        {#each Object.values($classData) as listD}
+            {#each listD[$currDay].courses as courses}
+                {#if (courses.name).includes("Math")}
+                    <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else if (courses.name).includes("Phys")}
-                        <div class="flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else if (courses.name).includes("Phys")}
+                    <div class="flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else if (courses.name).includes("Algo")}
-                        <div class="flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else if (courses.name).includes("Algo")}
+                    <div class="flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else if (courses.name).includes("Archi")}
-                        <div class="flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else if (courses.name).includes("Archi")}
+                    <div class="flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else if (courses.name).includes("Elec")}
-                        <div class="flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else if (courses.name).includes("Elec")}
+                    <div class="flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else if (courses.name).includes("CIE")}
-                        <div class="flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else if (courses.name).includes("CIE")}
+                    <div class="flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {:else}
-                        <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
-                            <div class="flex items-center text-center">
-                                <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
-                            </div>
+                    </div>
+                {:else}
+                    <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
-                    {/if}
-                {/each}
+                    </div>
+                {/if}
+            {/each}
         {/each}
     </div>
 </div>

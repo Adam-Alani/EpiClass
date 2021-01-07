@@ -39,7 +39,7 @@ func getData(cal Calendar) Weekly {
 
 		formatted.Daily = append(formatted.Daily, day)
 	}
-	prettyPrint(formatted)
+	//prettyPrint(formatted)
 	return formatted
 }
 

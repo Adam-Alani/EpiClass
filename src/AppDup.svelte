@@ -11,7 +11,7 @@
 
     function postreq() {
         let data = {"num1": parseFloat(num1), "num2": parseFloat(num2)}
-        console.log(data);
+
         axios({ method: "POST", url: "http://localhost:8090/calc", data: data, headers: {"content-type": "text/plain"}}).then(result => {
             add = result.data['add']
             mul = result.data['mul']
@@ -699,3 +699,316 @@
         },
     ]);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    export let WEEKLY_CUSTOM_THEME = writable({
+    // week header 'dayname'
+    'week.dayname.height': '41px',
+    'week.dayname.borderTop': '1px solid #fff',
+    'week.dayname.borderBottom': '1px solid #ddd',
+    'week.dayname.borderLeft': '1px solid #ddd',
+    'week.dayname.paddingLeft': '5px',
+    'week.dayname.backgroundColor': 'inherit',
+    'week.dayname.textAlign': 'left',
+    'week.today.color': '#3ED69E',
+    'week.pastDay.color': '#999',
+
+    // week vertical panel 'vpanel'
+    'week.vpanelSplitter.border': '1px solid #ddd',
+    'week.vpanelSplitter.height': '3px',
+
+    // week daygrid 'daygrid'
+    'week.daygrid.borderRight': '1px solid #ddd',
+    'week.daygrid.backgroundColor': 'inherit',
+
+    'week.daygridLeft.width': '77px',
+    'week.daygridLeft.backgroundColor': '#e61313',
+    'week.daygridLeft.paddingRight': '5px',
+    'week.daygridLeft.borderRight': '1px solid #3ED69E',
+
+    'week.today.backgroundColor': '#dcfff7',
+    'week.weekend.backgroundColor': 'inherit',
+
+    // week timegrid 'timegrid'
+    'week.timegridLeft.width': '77px',
+    'week.timegridLeft.backgroundColor': 'rgba(255,255,255,0.3)',
+    'week.timegridLeft.borderRight': '1px solid #ddd',
+    'week.timegridLeft.fontSize': '12px',
+    'week.timegridLeftTimezoneLabel.height': '51px',
+    'week.timegridLeftAdditionalTimezone.backgroundColor': '#e0e0e0',
+
+    'week.timegridOneHour.height': '48px',
+    'week.timegridHalfHour.height': '24px',
+    'week.timegridHalfHour.borderBottom': '1px dotted #f9f9f9',
+    'week.timegridHorizontalLine.borderBottom': '1px solid #ddd',
+
+    'week.timegrid.paddingRight': '0',
+    'week.timegrid.borderRight': '1px solid #fff',
+    'week.timegridSchedule.borderRadius': '0%',
+    'week.timegridSchedule.paddingLeft': '0',
+
+    'week.currentTime.color': '#303030',
+    'week.currentTime.fontSize': '10px',
+    'week.currentTime.fontWeight': 'bold',
+
+    'week.pastTime.color': '#808080',
+    'week.pastTime.fontWeight': 'normal',
+
+    'week.futureTime.color': '#303030',
+    'week.futureTime.fontWeight': 'bold',
+
+    'week.currentTimeLinePast.border': '1px solid rgba(19, 93, 230, 0.3)',
+    'week.currentTimeLineBullet.backgroundColor': '#135de6',
+    'week.currentTimeLineToday.border': '1px solid #135de6',
+    'week.currentTimeLineFuture.border': '1px solid #135de6',
+
+    // week creation guide style
+    'week.creationGuide.color': '#e0e0e0',
+    'week.creationGuide.fontSize': '12px',
+    'week.creationGuide.fontWeight': 'bold',
+
+    // week daygrid schedule style
+    'week.dayGridSchedule.borderRadius': '100%',
+    'week.dayGridSchedule.height': '18px',
+    'week.dayGridSchedule.marginTop': '2px',
+    'week.dayGridSchedule.marginLeft': '10px',
+    'week.dayGridSchedule.marginRight': '10px'
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let rec = async () => {
+    listData = []
+    data = await fetch('http://localhost:8090/1').then(x => x.json())
+    listData = Object.values(data)
+    for (let i = 0 ; i < listData[0].length ; i++) {
+    let courseList = Object.values(listData[0][i].courses)
+    for (let j = 0 ; j < courseList.length ; j++) {
+    let course = Object.values(courseList[j]);
+    allCourses.push(course)
+    allCourses = allCourses;
+
+}
+}
+
+
+
+
+    for (let i = 0; i < allCourses.length; i++) {
+
+    if (allCourses[i][0].includes("Math")) {
+    allCourses[i].push('#9E5FFF')
+}
+    else if (allCourses[i][0].includes("Algo")) {
+    allCourses[i].push('#22e084')
+}
+    else if (allCourses[i][0].includes("Phys")) {
+    allCourses[i].push('#FF5583')
+}
+    else if (allCourses[i][0].includes("Elec")) {
+    allCourses[i].push('#818CF8\n')
+}
+    else if (allCourses[i][0].includes("Archi")) {
+    allCourses[i].push('#60A5FA')
+}
+    else if (allCourses[i][0].includes("Prog")) {
+    allCourses[i].push('#10B981')
+}
+    else if (allCourses[i][0].includes("FLE")) {
+    allCourses[i].push('#00A9FF')
+}
+    else if (allCourses[i][0].includes("CIE") || allCourses[i][0].includes("TIM")) {
+    allCourses[i].push('#ffe03a')
+}
+    else {
+    allCourses[i].push('#ff7e4d')
+}
+
+}
+
+    var calendar = new Calendar('#calendar', {
+    defaultView: 'week',
+    calendars: [
+        {
+    id: '1',
+    name: 'My Calendar',
+    bgColor: '#9e5fff',
+    borderColor: '#F3F4F6'
+},
+    ],
+    week: {
+    workweek: true
+},
+    timezone: {
+    zones: [
+        {
+    timezoneOffset: 0,
+},
+    ],
+
+},
+    theme: $WEEKLY_CUSTOM_THEME,
+    isReadOnly: true,
+    taskView: false,
+    scheduleView: ['time'],
+    template: {
+    monthDayname: function(dayname) {
+    return '<span class=" calendar-week-dayname-name">' + dayname.label + '</span>';
+}
+}
+})
+
+    for (let i = 0; i < allCourses.length ; i++) {
+    calendar.createSchedules([
+        {
+    id: i.toString(),
+    calendarId: '1',
+    title: allCourses[i][0],
+    category: 'time',
+    dueDateClass: '',
+    start: allCourses[i][1],
+    end: allCourses[i][2],
+    isReadOnly: true,
+    bgColor: allCourses[i][5],
+    borderColor: allCourses[i][5],
+    color: '#ffffff'
+
+},
+    ]);
+}
+}
+    console.log(listData)
+    onMount(rec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $: onMount(async () => {
+    listData = []
+    data = await fetch('http://localhost:8090/1').then(x => x.json())
+    listData = Object.values(data)
+    for (let i = 0 ; i < listData[0].length ; i++) {
+    let courseList = Object.values(listData[0][i].courses)
+    for (let j = 0 ; j < courseList.length ; j++) {
+    let course = Object.values(courseList[j]);
+    allCourses.push(course)
+    allCourses = allCourses;
+
+}
+}
+
+    for (let i = 0; i < allCourses.length; i++) {
+
+    if (allCourses[i][0].includes("Math")) {
+    allCourses[i].push('#9E5FFF')
+}
+    else if (allCourses[i][0].includes("Algo")) {
+    allCourses[i].push('#22e084')
+}
+    else if (allCourses[i][0].includes("Phys")) {
+    allCourses[i].push('#FF5583')
+}
+    else if (allCourses[i][0].includes("Elec")) {
+    allCourses[i].push('#818CF8\n')
+}
+    else if (allCourses[i][0].includes("Archi")) {
+    allCourses[i].push('#60A5FA')
+}
+    else if (allCourses[i][0].includes("Prog")) {
+    allCourses[i].push('#10B981')
+}
+    else if (allCourses[i][0].includes("FLE")) {
+    allCourses[i].push('#00A9FF')
+}
+    else if (allCourses[i][0].includes("CIE") || allCourses[i][0].includes("TIM")) {
+    allCourses[i].push('#ffe03a')
+}
+    else {
+    allCourses[i].push('#ff7e4d')
+}
+
+}
+    calendar = new Calendar('#calendar', {
+    defaultView: 'week',
+    calendars: [
+        {
+    id: '1',
+    name: 'My Calendar',
+    bgColor: '#9e5fff',
+    borderColor: '#F3F4F6'
+},
+    ],
+    week: {
+    workweek: true
+},
+    timezone: {
+    zones: [
+        {
+    timezoneOffset: 0,
+},
+    ],
+
+},
+    theme: $WEEKLY_CUSTOM_THEME,
+    isReadOnly: true,
+    taskView: false,
+    scheduleView: ['time'],
+    template: {
+    monthDayname: function(dayname) {
+    return '<span class=" calendar-week-dayname-name">' + dayname.label + '</span>';
+}
+}
+})
+})
