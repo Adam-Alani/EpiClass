@@ -116,7 +116,7 @@ export let WEEKLY_CUSTOM_THEME = writable({
     'week.futureTime.fontWeight': '500',
 
     'week.currentTimeLinePast.border': '0px solid rgba(19, 93, 230, 0)',
-    'week.currentTimeLineBullet.backgroundColor': '#F3F4F6',
+    'week.currentTimeLineBullet.backgroundColor': 'transparent',
     'week.currentTimeLineToday.border': '0px solid #135de6',
     'week.currentTimeLineFuture.border': '0px solid #135de6',
 

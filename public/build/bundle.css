@@ -346,12 +346,7 @@
   overflow: hidden;
 }
 
-.tui-full-calendar-timegrid-hourmarker-line-left,
-.tui-full-calendar-timegrid-todaymarker,
-.tui-full-calendar-timegrid-hourmarker-line-today,
-.tui-full-calendar-timegrid-hourmarker-line-right {
-  display: none !important;
-}
+
 .tui-full-calendar-timegrid-left {
   position: absolute;
 }
