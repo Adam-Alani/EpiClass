@@ -6,21 +6,21 @@ export function setColors(tempCourses) {
         } else if (tempCourses[i][0].toUpperCase().includes("ALGO")) {
             tempCourses[i].push('#22e084')
         } else if (tempCourses[i][0].includes("Phys")) {
-            tempCourses[i].push('#FF5583')
+            tempCourses[i].push('#FF5AC4')
         } else if (tempCourses[i][0].includes("Elec")) {
-            tempCourses[i].push('#3e51ae')
+            tempCourses[i].push('#5AC8F8')
         } else if (tempCourses[i][0].includes("Archi")) {
             tempCourses[i].push('#3b91ab')
         } else if (tempCourses[i][0].includes("Prog")) {
             tempCourses[i].push('#0ca250')
         } else if (tempCourses[i][0].includes("FLE")) {
-            tempCourses[i].push('#ff00dd')
+            tempCourses[i].push('#FF158A')
         } else if (tempCourses[i][0].includes("CIE") || tempCourses[i][0].includes("TIM")) {
-            tempCourses[i].push('#FFCB00')
+            tempCourses[i].push('#ff4d4d')
         } else if (tempCourses[i][0].includes("Cor") || tempCourses[i][0].includes("Japon")) {
             tempCourses[i].push('#868686')
         } else {
-            tempCourses[i].push('#ff7e4d')
+            tempCourses[i].push('#ff8949')
         }
     }
     return tempCourses

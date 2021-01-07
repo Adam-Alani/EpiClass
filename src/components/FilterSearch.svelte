@@ -9,7 +9,7 @@
     let searchTerm = "";
     let res = null
     let foo = 'INFOS1B2-2'
-    $: filteredList = $classes.filter(item => item.name.indexOf(searchTerm) !== -1)
+    $: filteredList = $classes.filter(item => item.name.indexOf(searchTerm.toUpperCase()) !== -1)
 
     function postReq() {
         let data = $selectedClass
@@ -59,7 +59,7 @@
     </div>
     <div class="text-center font-semibold overflow-y-auto">
         <VirtualList items={filteredList}  bind:start={start} bind:end={end}  let:item>
-            <a href="#" role="button"  on:click={()=>{clickHandle(item)}}  class="truncate leading-loose outline-none hover:text-gray-200"v>{item.name}</a>
+            <a href="#" role="button"  on:click={()=>{clickHandle(item)}}  class="truncate leading-loose outline-none hover:text-gray-200 uppercase"v>{item.name.toUpperCase().split('O')[1]}</a>
         </VirtualList>
     </div>
 
