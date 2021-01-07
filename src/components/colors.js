@@ -1,6 +1,4 @@
 //All colors needed for Calendar, for schedule, modify tailwind classes
-
-
 export function setColors(tempCourses) {
     for (let i = 0; i < tempCourses.length; i++) {
         if (tempCourses[i][0].includes("Math")) {
