@@ -105,3 +105,4 @@ dist
 public/build/bundle.js
 public/build/bundle.js.map
 src/AppDup.svelte
+scripts/setupTypeScript.js

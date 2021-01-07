@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppDup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppDup.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,7 @@
       <workItem from="1609892196341" duration="10815000" />
       <workItem from="1609924968626" duration="13995000" />
       <workItem from="1609941872436" duration="41569000" />
-      <workItem from="1610008624406" duration="6387000" />
+      <workItem from="1610008624406" duration="6615000" />
     </task>
     <servers />
   </component>
