@@ -6,14 +6,14 @@ import "time"
 func getData(cal Calendar) Weekly {
 	var formatted Weekly
 
-	for _, d := range cal.DayList {
+	for _, i := range cal.DayList {
 		day := Daily{
-			Date: d.DateTime,
+			Date: i.DateTime,
 		}
 
 
-		for i := 0; i < len(d.CourseList); i++ {
-			c := d.CourseList[i]
+		for j := 0; j < len(i.CourseList); j++ {
+			c := i.CourseList[j]
 
 
 			course := Courses{
@@ -21,11 +21,11 @@ func getData(cal Calendar) Weekly {
 				StartDate: c.BeginDate.Add(time.Hour),
 			}
 
-			for _, t := range c.StaffList {
-				course.Staff = append(course.Staff, t.Name)
+			for _, s := range c.StaffList {
+				course.Staff = append(course.Staff, s.Name)
 			}
 
-			if len(course.Staff) > 10 { //Removes the 5AM lesson with all the teachers
+			if len(course.Staff) > 6 { //Removes the 5AM lesson with all the teachers
 				continue
 			}
 
