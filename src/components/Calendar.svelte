@@ -142,6 +142,9 @@
 
 
 <style>
+    .dgray-text {
+        color: #303030;
+    }
     @import 'tailwindcss/base';
     @import 'tailwindcss/components';
     @import 'tailwindcss/utilities';

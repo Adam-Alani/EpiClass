@@ -34,7 +34,7 @@ function getClasses(year, className , nums, sharp) {
 //=========Current class selected=========//
 
 
-export let selectedClass = writable(["Select Class.Default A1-1"])
+export let selectedClass = writable(["Select Class. Default: S1A1-1"])
 let s1 = getClasses(1,'F', 2, false)
 let s2 = getClasses(2,'F', 2,false)
 let s3 = getClasses(3,'E', 2,false)

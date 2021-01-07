@@ -104,3 +104,4 @@ dist
 .tern-port
 public/build/bundle.js
 public/build/bundle.js.map
+src/AppDup.svelte
