@@ -2,6 +2,7 @@ package main
 
 import "time"
 
+
 func getData(cal Calendar) Weekly {
 	var formatted Weekly
 
@@ -42,6 +43,9 @@ func getData(cal Calendar) Weekly {
 	//prettyPrint(formatted)
 	return formatted
 }
+
+
+
 
 type Weekly struct {
 	Daily []Daily `json:"daily"`

@@ -55,6 +55,7 @@ func prettyPrint(data Weekly) {
 	fmt.Printf("%s\n", string(prettyJSON))
 }
 
+
 type Calendar struct {
 	ID      int `json:"Id"`
 	DayList []struct {

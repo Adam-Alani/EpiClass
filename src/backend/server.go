@@ -14,7 +14,7 @@ func runServer(w http.ResponseWriter, request *http.Request) {
 	decoder.Decode(&selectedClass)
 
 	var days Calendar
-	if (len(selectedClass.ClassName) == 0) {
+	if len(selectedClass.ClassName) == 0 {
 		days = fetchAPI("Planning/GetRangeWeekRecursive/INFOS1A1-1/10")
 	} else {
 		days = fetchAPI("Planning/GetRangeWeekRecursive/" + selectedClass.ClassName + "/10")
@@ -29,6 +29,8 @@ func runServer(w http.ResponseWriter, request *http.Request) {
 	if err := json.NewEncoder(w).Encode(formatted); err != nil {
 		panic(err)
 	}
+
+
 }
 
 
@@ -36,8 +38,10 @@ func runServer(w http.ResponseWriter, request *http.Request) {
 
 
 func main() {
+	
 	http.HandleFunc("/", runServer)
 	http.ListenAndServe(":8090",nil)
+
 }
 
 
