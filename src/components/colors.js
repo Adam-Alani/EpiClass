@@ -1,8 +1,10 @@
 //All colors needed for Calendar, for schedule, modify tailwind classes
 export function setColors(tempCourses) {
     for (let i = 0; i < tempCourses.length; i++) {
-        if (tempCourses[i][0].includes("Math")) {
-            tempCourses[i].push('#9E5FFF')
+        if (pastDate(tempCourses[i][1])) {
+            tempCourses[i].push('#9CA3AF')
+        } else if (tempCourses[i][0].includes("Math")) {
+            tempCourses[i].push('#9e5fff')
         } else if (tempCourses[i][0].toUpperCase().includes("ALGO")) {
             tempCourses[i].push('#22e084')
         } else if (tempCourses[i][0].includes("Phys")) {
@@ -24,4 +26,10 @@ export function setColors(tempCourses) {
         }
     }
     return tempCourses
+}
+
+function pastDate(inpDate) {
+    let endDate = new  Date(inpDate);
+    let now = new Date();
+    return endDate < now;
 }

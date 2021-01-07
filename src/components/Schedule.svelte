@@ -45,7 +45,12 @@
         else if (day+1 === 6) {
             currDayStr.update(n => 0)
         }
+    }
 
+    function pastDate(inpDate) {
+        let endDate = new  Date(inpDate);
+        let now = new Date();
+        return endDate < now;
     }
 
 
@@ -66,6 +71,13 @@
     <div class="gray-text my-2 flex flex-col flex-grow justify-around hidden lg:flex font-semibold ">
         {#each Object.values($classData) as listD}
             {#each listD[$currDay].courses as courses}
+                {#if pastDate(courses.start_date)}
+                    <div class="flex flex-1 bg-gray-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else}
                 {#if (courses.name).includes("Math")}
                     <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
@@ -108,6 +120,7 @@
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
+                {/if}
                 {/if}
             {/each}
         {/each}
