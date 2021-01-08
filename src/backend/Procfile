@@ -1,1 +1,1 @@
-web: chronos.go & getCourses.go & server.go & wait -n
+web: server.go
