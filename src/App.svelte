@@ -11,7 +11,7 @@
             <div class="sidebar flex-none justify-between flex flex-col text-white bg-gradient-to-r from-green-300 to-green-400 ">
                 <FilterSearch/>
                 <div class=" h-8 flex flex-none items-center bg-white gray-text shadow-lg">
-                    <a href="https://www.github.com/Adam-Alani" target="_blank" class="ml-10 text-xs">Made with ❤ by Adam</a>
+                    <a href="https://www.github.com/Adam-Alani" target="_blank" class="ml-10 text-xs select-none">Made with ❤ by Adam</a>
                 </div>
             </div>
 
