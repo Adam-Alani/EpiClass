@@ -1,0 +1,9 @@
+---
+applications:
+  - name: api
+    random-route: true
+    memory: 256M
+    env:
+      GOVERSION: go1.15
+      GOPACKAGENAME: epiclass-api
+    buildpack: https://github.com/cloudfoundry/go-buildpack.git
