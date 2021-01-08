@@ -59,7 +59,7 @@
     </div>
     <div class="text-center font-semibold overflow-y-auto">
         <VirtualList items={filteredList}  bind:start={start} bind:end={end}  let:item>
-            <a href="#" role="button"  on:click={()=>{clickHandle(item)}}  class="truncate leading-loose outline-none hover:text-gray-200 uppercase"v>{item.name.toUpperCase().split('O')[1]}</a>
+            <a href="#" role="button"  on:click={()=>{clickHandle(item)}}  class="truncate leading-loose outline-none hover:text-gray-200 uppercase"v>{item.name.toUpperCase()}</a>
         </VirtualList>
     </div>
 

@@ -37,7 +37,10 @@ let s3E = getClasses(3,'E','E', 1,false);
 
 let s4 = getClasses(4,'A','D', 2,false)
 
-export let classes = writable(s1.concat(s1F,s2,s2F,s3,s3E,s4))
+let ing = [{name:"BING"},{name:"RIEMANN"},{name:"SHANNON"},{name:"TANENBAUM"}]
+let maj = [{name:"GISTRE"},{name:"GITM"},{name:"IMAGE"},{name:"MTI"},{name:"RDI"},{name:"SCIA"},{name:"SIGL"},{name:"SRS"},{name:"TCOM"}]
+
+export let classes = writable(s1.concat(s1F,s2,s2F,s3,s3E,s4,ing,maj))
 export let totalCourses = writable([])
 
 export let WEEKLY_CUSTOM_THEME = writable({

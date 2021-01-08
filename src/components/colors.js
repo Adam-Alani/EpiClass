@@ -1,28 +1,42 @@
 //All colors needed for Calendar, for schedule, modify tailwind classes
+
+let purple = ["Math","Imag","DEVOPS"];
+let green = ["ALGO","Prévenir"];
+let pink = ["Phys","PFE"];
+let cyan = ["Elec","Santé"];
+let blue = ["Archi","IT"];
+let dgreen = ["Prog","Analyser"];
+let dpink = ["FLE" , "TE" , "Perm"];
+let red = ["CIE","TIM","Techno"];
+let gray = ["Cor","Jap","Comm"];
+let yellow = ["QCM" , "Business"];
+
 export function setColors(tempCourses) {
     for (let i = 0; i < tempCourses.length; i++) {
         if (pastDate(tempCourses[i][1])) {
             tempCourses[i].push('#9CA3AF')
-        } else if (tempCourses[i][0].includes("Math")) {
+        } else if (purple.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#9e5fff')
-        } else if (tempCourses[i][0].toUpperCase().includes("ALGO")) {
+        } else if (green.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#22e084')
-        } else if (tempCourses[i][0].includes("Phys")) {
+        } else if (pink.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#FF5AC4')
-        } else if (tempCourses[i][0].includes("Elec")) {
+        } else if (cyan.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#5AC8F8')
-        } else if (tempCourses[i][0].includes("Archi")) {
+        } else if (blue.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#3b91ab')
-        } else if (tempCourses[i][0].includes("Prog")) {
+        } else if (dgreen.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#0ca250')
-        } else if (tempCourses[i][0].includes("FLE")) {
+        } else if (dpink.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#FF158A')
-        } else if (tempCourses[i][0].includes("CIE") || tempCourses[i][0].includes("TIM")) {
+        } else if (red.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#ff4d4d')
-        } else if (tempCourses[i][0].includes("Cor") || tempCourses[i][0].includes("Japon")) {
+        } else if (gray.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#868686')
+        } else if (yellow.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
+            tempCourses[i].push('#ffd849')
         } else {
-            tempCourses[i].push('#ff8949')
+            tempCourses[i].push('#78cf13')
         }
     }
     return tempCourses
