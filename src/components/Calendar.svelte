@@ -2,7 +2,7 @@
 
 <script>
     import {onMount} from 'svelte';
-    import { totalCourses ,classData ,currWeek, selectedClass, WEEKLY_CUSTOM_THEME} from "./stores";
+    import { totalCourses ,classData , selectedClass, WEEKLY_CUSTOM_THEME} from "./stores";
     import Calendar from 'tui-calendar'; /* ES6 */
     import "tui-calendar/dist/tui-calendar.css";
     import {setColors} from "./colors";
@@ -12,6 +12,7 @@
     let allCourses = [];
     let calendar;
     let currMonth = "       ";
+    let currWeek = 0;
 
     $: onMount( () => {
             listData = []
@@ -103,12 +104,12 @@
 
     function jumpWeek(sign) {
         if (sign) {
-            currWeek.update(n => n - 1)
+            currWeek--;
             calendar.move(-1);
             calendar.render();
             currMonth.setDate(currMonth.getDate()-7);
             } else {
-                currWeek.update(n => n + 1)
+                currWeek++
                 calendar.next();
                 currMonth.setDate(currMonth.getDate()+7);
             }
