@@ -20,13 +20,13 @@ func runServer(w http.ResponseWriter, request *http.Request) {
 		days = fetchAPI("Planning/GetRangeWeekRecursive/" + selectedClass.ClassName + "/10")
 	}
 
-	formatted := getData(days)
-	fmt.Println(formatted)
+	courseList := getData(days)
+	fmt.Println(courseList)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(formatted); err != nil {
+	if err := json.NewEncoder(w).Encode(courseList); err != nil {
 		panic(err)
 	}
 

@@ -4,7 +4,7 @@
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/getCourses.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/getCourses.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -105,7 +106,7 @@
       <workItem from="1610021485525" duration="1382000" />
       <workItem from="1610025066014" duration="3233000" />
       <workItem from="1610041667096" duration="875000" />
-      <workItem from="1610061752576" duration="1406000" />
+      <workItem from="1610061752576" duration="2639000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ import "time"
 
 
 func getData(cal Calendar) Weekly {
-	var formatted Weekly
+	var courseList Weekly
 
 	for _, i := range cal.DayList {
 		day := Daily{
@@ -38,10 +38,10 @@ func getData(cal Calendar) Weekly {
 
 		}
 
-		formatted.Daily = append(formatted.Daily, day)
+		courseList.Daily = append(courseList.Daily, day)
 	}
-	//prettyPrint(formatted)
-	return formatted
+	//prettyPrint(courseList)
+	return courseList
 }
 
 
