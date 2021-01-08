@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte'
     import {classData, currDay, currDayStr, selectedClass, weekDays} from "./stores";
+    import {purple, gray , green , dgreen , red , pink ,dpink , cyan , blue , yellow} from "./colors";
     import axios from "axios";
 
     let data;
@@ -85,44 +86,68 @@
                         </div>
                     </div>
                 {:else}
-                {#if (courses.name).includes("Math")}
+                {#if purple.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
                     <div class="flex flex-1 bg-purple-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
-                {:else if (courses.name).includes("Phys")}
+                {:else if pink.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
                     <div class="flex flex-1 bg-pink-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
-                {:else if (courses.name).includes("Algo")}
+                {:else if green.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
                     <div class="flex flex-1 bg-green-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
-                {:else if (courses.name).includes("Archi")}
-                    <div class="flex flex-1 bg-blue-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                {:else if blue.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-indigo-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
-                {:else if (courses.name).includes("Elec")}
-                    <div class="flex flex-1 bg-indigo-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                {:else if cyan.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-blue-500 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
-                {:else if (courses.name).includes("CIE")}
-                    <div class="flex flex-1 bg-yellow-200 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                {:else if yellow.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-yellow-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if dgreen.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-green-500 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if gray.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-gray-400 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if red.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                        <div class="flex items-center text-center">
+                            <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
+                        </div>
+                    </div>
+                {:else if dpink.some(el => courses.name.toUpperCase().includes(el.toUpperCase()))}
+                    <div class="flex flex-1 bg-pink-600 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>
                     </div>
                 {:else}
-                    <div class="flex flex-1 bg-red-300 rounded-lg items-center justify-center my-1 mx-4 shadow">
+                    <div class="flex flex-1 bg-100 rounded-lg items-center justify-center my-1 mx-4 shadow">
                         <div class="flex items-center text-center">
                             <p>{fixTime(courses.start_date).trim()} {(courses.name).trim()}</p>
                         </div>

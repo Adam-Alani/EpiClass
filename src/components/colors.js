@@ -1,15 +1,15 @@
 //All colors needed for Calendar, for schedule, modify tailwind classes
 
-let purple = ["Math","Imag","DEVOPS"];
-let green = ["ALGO","Prévenir"];
-let pink = ["Phys","PFE"];
-let cyan = ["Elec","Santé"];
-let blue = ["Archi","IT"];
-let dgreen = ["Prog","Analyser"];
-let dpink = ["FLE" , "TE" , "Perm"];
-let red = ["CIE","TIM","Techno"];
-let gray = ["Cor","Jap","Comm"];
-let yellow = ["QCM" , "Business"];
+export let purple = ["Math","Imag","DEVOPS"];
+export let green = ["ALGO","Prévenir"];
+export let pink = ["Phys","PFE"];
+export let cyan = ["Elec","Santé"];
+export let blue = ["Archi","IT"];
+export let dgreen = ["Prog","Analyser"];
+export let dpink = ["FLE" , "TE" , "Perm"];
+export let red = ["CIE","TIM","Techno"];
+export let gray = ["Cor","Jap","Comm"];
+export let yellow = ["qcm" , "Partiels", "Business"];
 
 export function setColors(tempCourses) {
     for (let i = 0; i < tempCourses.length; i++) {
@@ -27,14 +27,15 @@ export function setColors(tempCourses) {
             tempCourses[i].push('#3b91ab')
         } else if (dgreen.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#0ca250')
-        } else if (dpink.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
-            tempCourses[i].push('#FF158A')
-        } else if (red.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
-            tempCourses[i].push('#ff4d4d')
-        } else if (gray.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
-            tempCourses[i].push('#868686')
+
         } else if (yellow.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
             tempCourses[i].push('#ffd849')
+        } else if (gray.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
+            tempCourses[i].push('#868686')
+        } else if (red.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
+            tempCourses[i].push('#ff4d4d')
+        } else if (dpink.some(el => tempCourses[i][0].toUpperCase().includes(el.toUpperCase()))) {
+            tempCourses[i].push('#FF158A')
         } else {
             tempCourses[i].push('#78cf13')
         }
