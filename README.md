@@ -1,2 +1,2 @@
-# EpiCal
+# EpiClass 
 A better Chronos
