@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Schedule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Schedule.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +111,7 @@
       <workItem from="1610104660393" duration="13000" />
       <workItem from="1610105803126" duration="624000" />
       <workItem from="1610125322131" duration="10097000" />
-      <workItem from="1610144452623" duration="1135000" />
+      <workItem from="1610144452623" duration="1371000" />
     </task>
     <servers />
   </component>
