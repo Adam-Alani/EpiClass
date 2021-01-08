@@ -3,11 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
+	//"log"
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
+
 )
 
 
@@ -42,11 +42,6 @@ func runServer(w http.ResponseWriter, request *http.Request) {
 
 
 func main() {
-
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 
 	port := os.Getenv("PORT")
 
