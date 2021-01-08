@@ -1,8 +1,6 @@
-
-
 <script>
     import {onMount} from 'svelte';
-    import { totalCourses ,classData , selectedClass, WEEKLY_CUSTOM_THEME} from "./stores";
+    import {totalCourses, classData, selectedClass, WEEKLY_CUSTOM_THEME, weekDays} from "./stores";
     import Calendar from 'tui-calendar'; /* ES6 */
     import "tui-calendar/dist/tui-calendar.css";
     import {setColors} from "./colors";
@@ -58,7 +56,9 @@
                     return '<span class=" calendar-week-dayname-name cursor-default select-none">' + dayname.label + '</span>';
                 }
             }
-        })
+
+            }
+        )
         $:currMonth = new Date(calendar.getDate());
         $: for (let i = 0; i < allCourses.length ; i++) {
             if (i === 0) {
@@ -79,6 +79,10 @@
                     color: '#ffffff'
                 },
             ]);
+        }
+        $: if ((new Date()).getDay() === 0 || (new Date()).getDay() === 6 ) {
+            calendar.next();
+            currMonth.setDate(currMonth.getDate() + 2)
         }
     })
         $: for (let i = 0; i < $totalCourses.length ; i++) {
@@ -117,6 +121,7 @@
             calendar.render();
         currMonth = currMonth;
     }
+
 </script>
 
 

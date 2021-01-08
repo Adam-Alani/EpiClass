@@ -54,14 +54,11 @@
         }
     }
 
-
     function pastDate(inpDate) {
         let endDate = new  Date(inpDate);
         let now = new Date();
         return endDate < now;
     }
-
-
 </script>
 
 
