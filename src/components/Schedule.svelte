@@ -21,11 +21,11 @@
         return date.split('T')[1].slice(0,-4);
     }
     export function increaseDay(sign) {
-        let year = (classData.daily[0].date).split("-")[0]
+        let year = ($classData.daily[0].date).split("-")[0]
         if (year !== "2019") {
             console.log($currDay)
             if ($currDay !== 0 || sign === false) {
-    
+
                 if (sign) {
                     checkWeekend($currDayStr , true)
                     currDay.update(n => n -1)
