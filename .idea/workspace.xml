@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4fd512-b299-47cf-a192-57bd108fcceb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/getCourses.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/getCourses.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +44,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EpiclassAPI" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Programming\EpiCal\src\backend" />
+      <recent name="C:\Programming\EpiCal\src\backend\api" />
+      <recent name="C:\Programming\EpiCal\src\backend\4" />
       <recent name="C:\Programming\EpiCal\src\components" />
       <recent name="C:\Programming\EpiCal\src" />
-      <recent name="C:\Programming\EpiCal\src\backend" />
-      <recent name="C:\Programming\EpiCal\src\frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -106,7 +107,9 @@
       <workItem from="1610021485525" duration="1382000" />
       <workItem from="1610025066014" duration="3233000" />
       <workItem from="1610041667096" duration="875000" />
-      <workItem from="1610061752576" duration="2639000" />
+      <workItem from="1610061752576" duration="4569000" />
+      <workItem from="1610104660393" duration="13000" />
+      <workItem from="1610105803126" duration="624000" />
     </task>
     <servers />
   </component>

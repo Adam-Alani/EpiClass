@@ -11,7 +11,7 @@
 
     onMount(
         async function update() {
-            data = await fetch('http://localhost:8090/').then(x => x.json())
+            data = await fetch('https://apiepiclass.herokuapp.com/').then(x => x.json())
             listData = Object.values(data)
         }
     )

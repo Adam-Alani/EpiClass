@@ -14,7 +14,7 @@
     function postReq() {
         let data = $selectedClass
 
-        axios({ method: "POST", url: "http://localhost:8090/", data: data, headers: {"content-type": "text/plain"}}).then(result => {
+        axios({ method: "POST", url: "https://apiepiclass.herokuapp.com/", data: data, headers: {"content-type": "text/plain"}}).then(result => {
             res = result.data;
             $classData = res;
             updateCal();
