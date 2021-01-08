@@ -2,13 +2,9 @@
     import { onMount } from 'svelte'
     import {classData, currDay, currDayStr, selectedClass, weekDays} from "./stores";
     import {purple, gray , green , dgreen , red , pink ,dpink , cyan , blue , yellow} from "./colors";
-    import axios from "axios";
 
     let data;
     let listData = [];
-
-
-
 
     onMount(
         async function update() {
@@ -25,7 +21,6 @@
         if (year !== "2019") {
             console.log($currDay)
             if ($currDay !== 0 || sign === false) {
-
                 if (sign) {
                     checkWeekend($currDayStr , true)
                     currDay.update(n => n -1)
@@ -39,6 +34,14 @@
             }
         }
     }
+
+    export function getCurrDate() {
+        let todayDate = new Date();
+        if (todayDate.getDay() === 6 || todayDate.getDay() === 0) {
+            return $weekDays[(todayDate.getDay() + 2)% 7];
+        }
+        return $weekDays[todayDate.getDay()];
+    }
     export function checkWeekend(day , sign) {
         if (sign) {
             if (day === 1) {
@@ -50,6 +53,7 @@
             currDayStr.update(n => 0)
         }
     }
+
 
     function pastDate(inpDate) {
         let endDate = new  Date(inpDate);
@@ -71,7 +75,7 @@
         </div>
 
         <div class="w-2/6 items-center">
-        <h1 class="flex-none text-xl dgray-text text-center cursor-default select-none"><strong>{$weekDays[$currDayStr]}</strong></h1>
+        <h1 class="flex-none text-xl dgray-text text-center cursor-default select-none"><strong>{getCurrDate()}</strong></h1>
         </div>
         <div class="w-2/12">
         <a role="button" on:click={()=> {increaseDay(false)}}  class="float-right rounded-full border-transparent hover:bg-green-300 dgray-text ">

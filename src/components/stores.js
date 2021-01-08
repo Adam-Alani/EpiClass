@@ -3,8 +3,9 @@ import { writable} from "svelte/store";
 //==========Date variables==============//
 
 export let currWeek = writable(0);
+
 export let currDay = writable(0);
-export let currDayStr = writable((new Date()).getDay());
+export let currDayStr = writable((new Date().getDay()));
 export let weekDays = writable(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]);
 export let classData = writable({"daily":[{"date":"2019-01-06T23:00:00Z","courses":[{"name":"Choose Class","start_date":"2019-01-07T00:00:00Z","end_date":"2019-01-07T10:00:00Z","duration":60,"staff":["Mtir Ines"]}]}]});
 //==========Generate class names===========//
