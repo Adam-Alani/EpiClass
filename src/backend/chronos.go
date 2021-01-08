@@ -14,7 +14,7 @@ import (
 
 
 func fetchAPI(query string) Calendar {
-	const tokenKey = "ipu2SeSGiwpa5EeB"
+	const tokenKey = ""
 	var endpoint = "https://v2ssl.webservices.chronos.epita.net/api/v2/" + query
 
 
