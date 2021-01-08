@@ -11,14 +11,18 @@ export let classData = writable({"daily":[{"date":"2019-01-06T23:00:00Z","course
 //==========Generate class names===========//
 const chr2num = c => c.charCodeAt(0);
 const num2chr = n => String.fromCharCode(n);
-function getClasses(year,  startName ,className , nums, sharp) {
+function getClasses(yearName,   startName ,className , nums, group,sharp) {
     let res = []
     for (let i = chr2num(startName); i <= chr2num(className); i++) {
         for (let j = 1 ; j <= nums; j++)
-            for (let k = 1; k <= 2 ; k++) {
-                res.push({name:"INFOS"+year+num2chr(i)+j+'-'+k})
+            if (group) {
+                for (let k = 1; k <= group ; k++) {
+                    res.push({name:yearName+num2chr(i)+j+'-'+k})
+                }
             }
-
+            else {
+                res.push({name:yearName+num2chr(i)+j})
+            }
     }
     return res
 }
@@ -26,21 +30,25 @@ function getClasses(year,  startName ,className , nums, sharp) {
 //=========Current class selected=========//
 
 export let selectedClass = writable(["Select Class."])
-let s1 = getClasses(1,'A' ,'E', 2, false);
-let s1F = getClasses(1,'F' ,'F', 1, false);
+let s1 = getClasses("INFOS1",'A' ,'E', 2, 2, false);
+let s1F = getClasses("INFOS1",'F' ,'F', 1, 2,false);
 
-let s2 = getClasses(2,'A','E', 2,false)
-let s2F = getClasses(1,'F' ,'F', 1, false);
+let s2 = getClasses("INFOS2",'A','E', 2, 2,false)
+let s2F = getClasses("INFOS2",'F' ,'F', 1, 2,false);
 
-let s3 = getClasses(3,'A','D', 2,false);
-let s3E = getClasses(3,'E','E', 1,false);
+let s3 = getClasses("INFOS3",'A','D', 2,2,false);
+let s3E = getClasses("INFOS3",'E','E', 1,2,false);
 
-let s4 = getClasses(4,'A','D', 2,false)
+let s4 = getClasses("INFOS4",'A','D', 2,2,false)
 
-let ing = [{name:"BING"},{name:"RIEMANN"},{name:"SHANNON"},{name:"TANENBAUM"}]
+let bing = [{name:"BING"},{name:"BING B"}]
+let reimann = getClasses("RIEMANN ","A","A",2,null,false);
+let shannon = getClasses("SHANNON ","C","C",5,null,false);
+let tanenbaum = getClasses("TANENBAUM ", "D","D",5,null,false)
+
 let maj = [{name:"GISTRE"},{name:"GITM"},{name:"IMAGE"},{name:"MTI"},{name:"RDI"},{name:"SCIA"},{name:"SIGL"},{name:"SRS"},{name:"TCOM"}]
 
-export let classes = writable(s1.concat(s1F,s2,s2F,s3,s3E,s4,ing,maj))
+export let classes = writable(s1.concat(s1F,s2,s2F,s3,s3E,s4,bing,reimann,shannon,tanenbaum,maj))
 export let totalCourses = writable([])
 
 export let WEEKLY_CUSTOM_THEME = writable({
