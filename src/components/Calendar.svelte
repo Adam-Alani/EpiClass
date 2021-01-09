@@ -80,7 +80,7 @@
                 },
             ]);
         }
-        $: if ((new Date()).getDay() === 0 || (new Date()).getDay() === 6 ) {
+        $: if ( (new Date()).getDay() === 6 ) {
             calendar.next();
             currMonth.setDate(currMonth.getDate() + 2)
         }
