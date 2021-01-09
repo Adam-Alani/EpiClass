@@ -2,9 +2,12 @@
     import { onMount } from 'svelte'
     import {classData, currDay, currDayStr, selectedClass, weekDays} from "./stores";
     import {purple, gray , green , dgreen , red , pink ,dpink , cyan , blue , yellow} from "./colors";
+    import {writable} from "svelte/store";
 
     let data;
     let listData = [];
+    let todayDate = new Date();
+    $: currentDay = 0;
 
     onMount(
         async function update() {
@@ -25,23 +28,28 @@
                     checkWeekend($currDayStr , true)
                     currDay.update(n => n -1)
                     currDayStr.update(n => n - 1)
+                    currentDay = (currentDay - 1) % 7;
                 }
                 else {
                     checkWeekend($currDayStr , false)
                     currDay.update(n => n + 1)
                     currDayStr.update(n => n + 1)
+                    currentDay = (currentDay + 1) % 7;
                 }
             }
         }
     }
 
     export function getCurrDate() {
-        let todayDate = new Date();
         if (todayDate.getDay() === 6 || todayDate.getDay() === 0) {
-            return $weekDays[(todayDate.getDay() + 2)% 7];
+            currentDay = (todayDate.getDay() + 2)% 7;
+        } else {
+            currentDay = todayDate.getDay();
         }
-        return $weekDays[todayDate.getDay()];
     }
+
+    $: getCurrDate();
+
     export function checkWeekend(day , sign) {
         if (sign) {
             if (day === 1) {
@@ -72,7 +80,7 @@
         </div>
 
         <div class="w-2/6 items-center">
-        <h1 class="flex-none text-xl dgray-text text-center cursor-default select-none"><strong>{getCurrDate()}</strong></h1>
+        <h1 class="flex-none text-xl dgray-text text-center cursor-default select-none"><strong>{$weekDays[currentDay]}</strong></h1>
         </div>
         <div class="w-2/12">
         <a role="button" on:click={()=> {increaseDay(false)}}  class="float-right rounded-full border-transparent hover:bg-green-300 dgray-text ">
