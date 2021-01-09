@@ -1,6 +1,6 @@
 <script>
     import {onMount} from 'svelte';
-    import {totalCourses, classData, selectedClass, WEEKLY_CUSTOM_THEME, weekDays} from "./stores";
+    import {totalCourses, classData, selectedClass, WEEKLY_CUSTOM_THEME} from "./stores";
     import Calendar from 'tui-calendar'; /* ES6 */
     import "tui-calendar/dist/tui-calendar.css";
     import {setColors} from "./colors";

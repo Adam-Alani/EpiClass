@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte'
-    import {classData, currDay, currDayStr, selectedClass, weekDays} from "./stores";
+    import {classData, currDay, currDayStr, weekDays} from "./stores";
     import {purple, gray , green , dgreen , red , pink ,dpink , cyan , blue , yellow} from "./colors";
-    import {writable} from "svelte/store";
+
 
     let data;
     let listData = [];
