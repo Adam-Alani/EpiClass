@@ -7,7 +7,20 @@
     let data;
     let listData = [];
     let todayDate = new Date();
-    $: currentDay = 0;
+    $: currentDay = getCurrDate();
+
+    function getCurrDate() {
+        let todaysDate = 0
+        console.log(todaysDate);
+        if (todayDate.getDay() === 6) {
+            todaysDate = (todayDate.getDay() + 2)% 7;
+        } else if ( todayDate.getDay() === 0) {
+            todaysDate = (todayDate.getDay() + 1) % 7;
+        } else {
+            todaysDate = todayDate.getDay();
+        }
+        return todaysDate;
+    }
 
     onMount(
         async function update() {
@@ -16,39 +29,36 @@
         }
     )
 
+
     export function fixTime(date) {
         return date.split('T')[1].slice(0,-4);
     }
     export function increaseDay(sign) {
         let year = ($classData.daily[0].date).split("-")[0]
         if (year !== "2019") {
-            console.log($currDay)
             if ($currDay !== 0 || sign === false) {
                 if (sign) {
-                    checkWeekend($currDayStr , true)
-                    currDay.update(n => n -1)
-                    currDayStr.update(n => n - 1)
-                    currentDay = (currentDay - 1) % 7;
+                    checkWeekend($currDayStr , true);
+                    pastDay();
+                    currDay.update(n => n -1);
+                    currDayStr.update(n => n - 1);
+                    console.log(currentDay)
+                    currentDay = (currentDay - 1);
                 }
                 else {
-                    checkWeekend($currDayStr , false)
-                    currDay.update(n => n + 1)
-                    currDayStr.update(n => n + 1)
+                    checkWeekend($currDayStr , false);
+                    nextDay();
+                    currDay.update(n => n + 1);
+                    currDayStr.update(n => n + 1);
                     currentDay = (currentDay + 1) % 7;
                 }
             }
         }
     }
 
-    export function getCurrDate() {
-        if (todayDate.getDay() === 6 || todayDate.getDay() === 0) {
-            currentDay = (todayDate.getDay() + 2)% 7;
-        } else {
-            currentDay = todayDate.getDay();
-        }
-    }
 
-    $: getCurrDate();
+
+
 
     export function checkWeekend(day , sign) {
         if (sign) {
@@ -59,6 +69,17 @@
         }
         else if (day+1 === 6) {
             currDayStr.update(n => 0)
+        }
+    }
+
+    function nextDay() {
+        if (currentDay+1 === 6 || currentDay+1 === 0) {
+            currentDay = 0;
+        }
+    }
+    function pastDay() {
+        if (currentDay-1 === 6 || currentDay-1 === 0) {
+            currentDay = 6;
         }
     }
 
