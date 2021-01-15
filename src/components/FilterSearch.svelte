@@ -34,6 +34,9 @@
         let listData = Object.values($classData)
         let tempCourses = [];
         for (let i = 0 ; i < listData[0].length ; i++) {
+            if (listData[0][i].courses === null) {
+                continue
+            }
             let courseList = Object.values(listData[0][i].courses)
             for (let j = 0 ; j < courseList.length ; j++) {
                 let course = Object.values(courseList[j]);
